@@ -1,0 +1,29 @@
+Origin: CreateWebinar
+Label: BBB Download
+Codename: bbbdownload
+Version: 1.0.0
+Date: Wed, 11 Jul 2018 10:13:33 UTC
+Architectures: amd64 i386
+Components: main
+Description: BBB Download repository
+MD5Sum:
+ 522b98eb97e2d021a00a374a42167cc5 610 main/binary-amd64/Packages
+ a00fa91822015762fd02e9f11f2045e3 450 main/binary-amd64/Packages.gz
+ a9e28b18c1fbbbf08925570464a9f1c9 130 main/binary-amd64/Release
+ 522b98eb97e2d021a00a374a42167cc5 610 main/binary-i386/Packages
+ a00fa91822015762fd02e9f11f2045e3 450 main/binary-i386/Packages.gz
+ e4f734766fd4ac7e31c2bc564765f14a 129 main/binary-i386/Release
+SHA1:
+ 8c809d172e04de0ca1d148a8ede756852d38442e 610 main/binary-amd64/Packages
+ 9b7058eda91b9f021eaf0f7b5ae9c213f92d8f1c 450 main/binary-amd64/Packages.gz
+ f8dce1882271fa4b8dbcfa1628f4bb89849c1292 130 main/binary-amd64/Release
+ 8c809d172e04de0ca1d148a8ede756852d38442e 610 main/binary-i386/Packages
+ 9b7058eda91b9f021eaf0f7b5ae9c213f92d8f1c 450 main/binary-i386/Packages.gz
+ 3235faffd6175497e3eac32c617cb1f2b77dc600 129 main/binary-i386/Release
+SHA256:
+ 3a61bcf9acc3ac00e1e20d177d3a2b8bd9876fc807372f6d33f63a5335269ed5 610 main/binary-amd64/Packages
+ 096517bb9064047b4099ad7512338ece5215c18ce2d960c96708a2f6e9aa4b02 450 main/binary-amd64/Packages.gz
+ adce59611aae14dc6b00af1574bea3ef31364efa75045eb431d7e7f5d012e510 130 main/binary-amd64/Release
+ 3a61bcf9acc3ac00e1e20d177d3a2b8bd9876fc807372f6d33f63a5335269ed5 610 main/binary-i386/Packages
+ 096517bb9064047b4099ad7512338ece5215c18ce2d960c96708a2f6e9aa4b02 450 main/binary-i386/Packages.gz
+ 8a74acb16c535f7547ea2a21c8dfecc53324f77c736215bfbee7d6c685cf6fe4 129 main/binary-i386/Release

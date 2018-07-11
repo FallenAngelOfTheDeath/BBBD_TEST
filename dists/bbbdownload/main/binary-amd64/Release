@@ -1,0 +1,6 @@
+Version: 1.0.0
+Component: main
+Origin: CreateWebinar
+Label: BBB Download
+Architecture: amd64
+Description: BBB Download repository

@@ -1,0 +1,7 @@
+Architectures: amd64 i386
+Codename: bbbdownload
+Components: main
+Description: BBB Download repository
+Label: BBB Download
+Origin: CreateWebinar
+Version: 1.0.0

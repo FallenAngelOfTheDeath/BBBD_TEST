@@ -1,0 +1,16 @@
+Package: bbbdownload
+Version: 1.0.0
+Architecture: all
+Maintainer: D <t@t.t>
+Installed-Size: 74529
+Depends: python (>= 2.7)
+Homepage: <insert the upstream URL, if relevant>
+Priority: optional
+Section: utils
+Filename: pool/main/b/bbbdownload/bbbdownload_1.0.0_all.deb
+Size: 25155956
+SHA256: 5fd09bf474ef031e78dfaa7f2c0ebfa5e86468fa276157b03b6c968d9216368b
+SHA1: df2ed6aab8aa2c4a69b16c3282a3ad77f4f68e73
+MD5sum: d9434bab4946419d86ae8a8a532b5c8e
+Description: A pytjon script that produces downloadavble meterial for existing and new recordings in aBigBlueButton 1.1 installation. BBB >= 2.0 is not supported yet.
+
