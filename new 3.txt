@@ -1,0 +1,102 @@
+1. Install apache and reprepro
+
+	apt-get install apache2
+	apt-get install reprepro
+	apt-get install dh-make
+	apt-get install dpkg-sig
+	
+2. Configuring Apache
+	
+	
+2. Create A directory 
+	mkdir /var/www/html/repos/apt/bbb/conf
+
+3. Setup The Core Apt Repo Config File
+
+	cd /var/www/html/repos/apt/bbb
+	cat <<EOF >> conf/distributions
+	Origin: BigBlueButton Download
+	Label: BBB Download
+	Codename: stable
+	Architectures: amd64 i386 sourse
+	Components: main
+	Description: BBB Download
+	SignWith: yes
+	Pull: stable
+	EOF
+	
+	
+2. Create deb package
+
+	2.1 Create empty project folder
+
+	mkdir /var/www/html/repos/tmp/bbbdownload/debian
+	cd /var/www/html/repos/tmp/bbbdownload/debian
+
+	2.2Create debian/ folder with example files (.ex)
+	
+	dh_make \
+	  --native \
+	  --single \
+	  --packagename bbbdownlload_1.0.0 \
+	  --email phil@example.com
+	  
+	2.3 edit control
+	nano debian/control
+	
+		Source: bbbdownload
+		Section: utils
+		Priority: optional
+		Maintainer: root <root@unknown>
+		Build-Depends: debhelper (>= 10)
+		Standards-Version: 4.1.2
+		Homepage: <888>
+		Package: bbbdownload
+		Architecture: all
+		Depends: ${misc:Depends}
+		Description: A pytjon script that produces downloadavble meterial 
+		  
+	2.4 cteate posst install script
+	touch debian/postinst
+	nano debian/postinst
+	  
+	2.5 Adding files
+	mkdir -p files/usr/bin/bbbdownload/install
+	wget "https://github.com/createwebinar/bbb-download/archive/master.zip"
+	unzip maser.zip
+	mv bbb-download-master/* /var/www/html/repos/tmp/bbbdownload/debian/files/usr/bin/bbbdownload/install
+	  
+	2.6 Install conf
+	cd /var/www/html/repos/tmp/bbbdownload/debian
+	touch install
+	nano install
+	
+			files/usr/* usr
+			
+	2.7 build the package	
+	dpkg-buildpackage
+
+3. Creating a GPG Key for Signing
+	gpg --gen-key
+		Select Option 1 to generate an RSA Key
+		Choose your keysize from the options given (doesn’t really matter for our purposes
+		Enter your name and email address when prompted
+	gpg --armor --export 09212FF6 > gpg.key
+
+4. Sign deb
+	cd /var/www/html/repos/tmp/bbbdownload
+	dpkg-sig --sign builder bbbdownload_1.0.0_all.deb
+	
+3. Add deb package 
+	cd /var/www/html/repos/apt/bbb
+	reprepro --ask-passphrase -Vb . includedeb stable /var/www/html/repos/tmp/bbbdownload/bbbdownload_1.0.0_all.deb
+	
+	wget -O - http://159.65.152.100/repos/gpg.key |sudo apt-key add -
+	sudo add-apt-repository 'deb http://159.65.152.100/repos/apt/bbb/  stable main'
+	sudo apt-get update
+	sudo apt-get install bbbdownload
+	
+	
+	
+	==============================
+	http://159.65.152.100/repos/apt/bbb/
